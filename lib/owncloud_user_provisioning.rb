@@ -1,13 +1,15 @@
 require "owncloud_user_provisioning/version"
 require "faraday"
 require "awesome_print"
-require "pry-byebug"
 require "nokogiri"
 require 'dotenv'
 Dotenv.load
+begin
+  require 'pry-byebug'
+rescue LoadError
+end
 module OwncloudUserProvisioning
 
-  # Your code goes here...
   def self.conn
     conn ||= Faraday.new(url: 'http://cloud.espm.br/ocs/v1.php/cloud/') do |faraday|
       # faraday.response :logger
