@@ -1,11 +1,11 @@
 require "owncloud_user_provisioning/version"
 require "faraday"
-require "awesome_print"
 require "nokogiri"
 require 'dotenv'
 Dotenv.load
 begin
   require 'pry-byebug'
+  require "awesome_print"
 rescue LoadError
 end
 module OwncloudUserProvisioning
