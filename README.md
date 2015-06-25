@@ -1,8 +1,10 @@
 # OwncloudUserProvisioning
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/owncloud_user_provisioning`. To experiment with that code, run `bin/console` for an interactive prompt.
+Simple interface to Ownlcloud's User Provisionin API.
 
-TODO: Delete this and the text above, and describe your gem
+https://doc.owncloud.org/server/8.0/admin_manual/configuration_user/user_provisioning_api.html
+
+Tested with 8.0.4 version.
 
 ## Installation
 
@@ -22,7 +24,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The gem uses dotenv to load the owncloud username and password to access the api.
+
+Example
+#.env file
+OWNCLOUD_USER=user_that_can_create_users
+OWNCLOUD_PASSWORD=password
 
 ## Development
 
@@ -32,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/owncloud_user_provisioning.
+Bug reports and pull requests are welcome on GitHub at https://github.com/alextakitani/owncloud_user_provisioning.
 
 
 ## License
