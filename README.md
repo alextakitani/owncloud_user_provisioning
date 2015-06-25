@@ -29,6 +29,7 @@ The gem uses dotenv to load the owncloud username and password to access the api
 Example
 #.env file
 OWNCLOUD_USER=user_that_can_create_users
+
 OWNCLOUD_PASSWORD=password
 
 ## Development
