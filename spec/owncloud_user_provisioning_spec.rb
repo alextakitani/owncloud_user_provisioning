@@ -22,7 +22,7 @@ describe OwncloudUserProvisioning do
   end
 
   it "lists the user groups" do
-    expect(subject.find_groups(user_name: "admin").css("element").text).to eq("admin")
+    expect(subject.find_user_groups(user_name: "admin").css("element").text).to eq("admin")
   end
 
   context "user maintenance" do
@@ -56,4 +56,49 @@ describe OwncloudUserProvisioning do
       expect(subject.add_user(user_name: 'teste_api', password: 'banana').css("message").text).to eq("User already exists")
     end
   end
+
+  context "group" do
+
+      before do
+        subject.remove_user(user_name: 'teste_api')
+      end
+
+      it "adding a user to an unexisting group returns an error" do
+        subject.add_user(user_name: 'teste_api', password: 'banana')
+        req = subject.add_to_group(user_name: 'teste_api', group: 'teste_api')
+        expect(req.css("status").text).to eq("failure")
+        expect(req.css("statuscode").text).to eq("102")
+      end
+
+      it "lists all groups" do
+        expect(subject.find_groups.class).to be(Nokogiri::XML::Document)
+      end
+
+      it "finds groups by name" do
+        expect(subject.find_groups(group: "admin").css("element").text).to eq("admin")
+      end
+
+      it "creates a group" do
+        expect(subject.create_group(group_id: 'teste_api').css("statuscode").text).to eq("100")
+      end
+
+      it "add a user to a group" do
+        subject.add_user(user_name: 'teste_api', password: 'banana')
+        req = subject.add_to_group(user_name: 'teste_api', group: 'teste_api')
+        expect(req.css("statuscode").text).to eq("100")
+      end
+
+      it "deletes a group" do
+        expect(subject.remove_group(group_id: 'teste_api').css("statuscode").text).to eq("100")
+      end
+
+
+
+      # it "creates a group" do
+      #   expect(subject.create_group(group_id: 'teste_api').css("statuscode")).to eq("100")
+      # end
+
+  end
+
+
 end

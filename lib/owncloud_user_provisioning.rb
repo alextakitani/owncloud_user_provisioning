@@ -32,7 +32,7 @@ module OwncloudUserProvisioning
     Nokogiri::XML(response.body)
   end
 
-  def self.find_groups(user_name: nil)
+  def self.find_user_groups(user_name: nil)
     fail(ArgumentError, "user_name is required") if user_name.nil?
     response = conn.get "users/#{user_name}/groups"
     Nokogiri::XML(response.body)
@@ -64,4 +64,39 @@ module OwncloudUserProvisioning
     response = conn.put "users/#{user_name}", key: "quota", value: quota
     Nokogiri::XML(response.body)
   end
+
+  def self.add_to_group(user_name: nil, group: nil)
+    fail(ArgumentError, "user_name is required") if user_name.nil?
+    fail(ArgumentError, "group is required") if group.nil?
+    response = conn.post "users/#{user_name}/groups", groupid: group
+    Nokogiri::XML(response.body)
+  end
+
+  def self.find_groups(group: nil)
+    params = { search: group } if group
+    response = conn.get 'groups', params
+    Nokogiri::XML(response.body)
+  end
+
+  def self.create_group(group_id: nil)
+    fail(ArgumentError, "group_id is required") if group_id.nil?
+    params = {groupid: group_id}
+    response = conn.post 'groups', params
+    Nokogiri::XML(response.body)
+  end
+
+  def self.remove_group(group_id: nil)
+    fail(ArgumentError, "group_id is required") if group_id.nil?
+    params = {groupid: group_id}
+    response = conn.delete "groups/#{group_id}"
+    Nokogiri::XML(response.body)
+  end
+
+  # def self.find_group(group: nil)
+  #   fail(ArgumentError, "group is required") if group.nil?
+  #   response = conn.get "groups/#{group}"
+  #   Nokogiri::XML(response.body)
+  # end
+
+
 end
