@@ -7,5 +7,5 @@
 /pkg/
 /spec/reports/
 /tmp/
-.env
+# .env
 .pry_history

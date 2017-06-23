@@ -11,7 +11,7 @@ end
 module OwncloudUserProvisioning
 
   def self.conn
-    conn ||= Faraday.new(url: 'http://cloud.espm.br/ocs/v1.php/cloud/') do |faraday|
+    conn ||= Faraday.new(url: 'https://cloud.espm.br/ocs/v1.php/cloud/') do |faraday|
       # faraday.response :logger
       # faraday.response :raise_error
       faraday.request :url_encoded

@@ -1,16 +1,13 @@
 require 'spec_helper'
 
 describe OwncloudUserProvisioning do
-  it 'has a version number' do
-    expect(OwncloudUserProvisioning::VERSION).not_to be nil
-  end
 
   it "lists all users" do
     expect(subject.find_users.class).to be(Nokogiri::XML::Document)
   end
 
   it "searches for users" do
-    expect(subject.find_users(user_name: 'admin').css('users').first.text.strip).to eq("admin")
+    expect(subject.find_users(user_name: 'admin').css('users').first.text.strip).to include("admin")
   end
 
   it "find a user with no arguments should raise an error" do
@@ -22,7 +19,7 @@ describe OwncloudUserProvisioning do
   end
 
   it "lists the user groups" do
-    expect(subject.find_user_groups(user_name: "admin").css("element").text).to eq("admin")
+    expect(subject.find_user_groups(user_name: "admin").css("element").text).to include("admin")
   end
 
   context "user maintenance" do
@@ -42,7 +39,7 @@ describe OwncloudUserProvisioning do
 
     it "changes the user quota" do
       subject.add_user(user_name: 'teste_api', password: 'banana')
-      subject.change_quota(user_name: 'teste_api', quota: '1024' )
+      subject.change_quota(user_name: 'teste_api', quota: '1024MB' )      
       expect( subject.find_user(user_name: 'teste_api').css('quota total').text).to eql('1024')
     end
 
@@ -75,7 +72,7 @@ describe OwncloudUserProvisioning do
       end
 
       it "finds groups by name" do
-        expect(subject.find_groups(group: "admin").css("element").text).to eq("admin")
+        expect(subject.find_groups(group: "admin").css("element").text).to include("admin")
       end
 
       it "creates a group" do
