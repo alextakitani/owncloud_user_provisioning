@@ -1,0 +1,30 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+OwncloudUserProvisioning	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^module OwncloudUserProvisioning$/;"	module	line:11
+conn	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.conn$/;"	singleton method	line:13	class:OwncloudUserProvisioning
+find_users	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.find_users(user_name: nil)$/;"	singleton method	line:23	class:OwncloudUserProvisioning
+find_user	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.find_user(user_name: nil)$/;"	singleton method	line:29	class:OwncloudUserProvisioning
+find_user_groups	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.find_user_groups(user_name: nil)$/;"	singleton method	line:35	class:OwncloudUserProvisioning
+add_user	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.add_user(user_name: nil, password: nil)$/;"	singleton method	line:41	class:OwncloudUserProvisioning
+remove_user	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.remove_user(user_name: nil)$/;"	singleton method	line:48	class:OwncloudUserProvisioning
+change_email	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.change_email(user_name: nil, email: nil)$/;"	singleton method	line:54	class:OwncloudUserProvisioning
+change_quota	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.change_quota(user_name: nil, quota: nil)$/;"	singleton method	line:61	class:OwncloudUserProvisioning
+add_to_group	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.add_to_group(user_name: nil, group: nil)$/;"	singleton method	line:68	class:OwncloudUserProvisioning
+find_groups	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.find_groups(group: nil)$/;"	singleton method	line:75	class:OwncloudUserProvisioning
+create_group	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.create_group(group_id: nil)$/;"	singleton method	line:81	class:OwncloudUserProvisioning
+remove_group	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning.rb	/^  def self.remove_group(group_id: nil)$/;"	singleton method	line:88	class:OwncloudUserProvisioning
+OwncloudUserProvisioning	/home/alex/Projetos/owncloud_user_provisioning/lib/owncloud_user_provisioning/version.rb	/^module OwncloudUserProvisioning$/;"	module	line:1
+OwncloudUserProvisioning	/home/alex/Projetos/owncloud_user_provisioning/README.md	/^# OwncloudUserProvisioning$/;"	function	line:1
+Installation	/home/alex/Projetos/owncloud_user_provisioning/README.md	/^## Installation$/;"	function	line:9
+Usage	/home/alex/Projetos/owncloud_user_provisioning/README.md	/^## Usage$/;"	function	line:25
+.env file	/home/alex/Projetos/owncloud_user_provisioning/README.md	/^#.env file$/;"	function	line:30
+Development	/home/alex/Projetos/owncloud_user_provisioning/README.md	/^## Development$/;"	function	line:35
+Contributing	/home/alex/Projetos/owncloud_user_provisioning/README.md	/^## Contributing$/;"	function	line:41
+License	/home/alex/Projetos/owncloud_user_provisioning/README.md	/^## License$/;"	function	line:46
+language	/home/alex/Projetos/owncloud_user_provisioning/.travis.yml	/^language: ruby$/;"	function	line:1
+rvm	/home/alex/Projetos/owncloud_user_provisioning/.travis.yml	/^rvm:$/;"	function	line:2
+before_install	/home/alex/Projetos/owncloud_user_provisioning/.travis.yml	/^before_install: gem install bundler -v 1.10.4$/;"	function	line:4
